@@ -1,6 +1,10 @@
+// general imports
 import React, { useEffect, useState } from 'react';
 import './style.css';
 import useFetch from "./hooks/useFetch"
+// component imports
+import FormList from './components/FormList';
+import PrefillUI from './components/PrefillUI';
 
 export default function App() {
   const url =
@@ -14,16 +18,13 @@ export default function App() {
   const { data, error, isLoading } = useFetch(url, options);
 
   return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
+    <main>
+      <h1>Journey Builder</h1>
+      <p>here are the available forms</p>
       {error && <div>ERROR!</div>}
       {isLoading && <div>Loading...</div>}
-      {data && <div>
-        {data.forms.map((item, index)=>(
-          <div key={index}>[{item.name}] description: {item.description}</div>
-        ))}
-      </div>}
-    </div>
+      {data && <FormList forms={data.forms}/>}
+      <PrefillUI data={data}></PrefillUI>
+    </main>
   );
 }

@@ -5,7 +5,7 @@ export default function PrefillModal(props) {
   if (!props.isOpen) return null;
 
   return (
-    <div className="modal-overlay">
+    <div className="modal-container">
       <div className="modal-content">
         <button className="close-button" onClick={props.onClose}>
           &times;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const useFetch = (url) => {
-  const [data, setData] = useState(null);
+  const [queryData, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -10,13 +10,13 @@ const useFetch = (url) => {
       .then(response => {
         if (!response.ok) { 
           // error coming back from server
-          throw Error('could not fetch the data for that resource');
+          throw Error('could not fetch the queryData for that resource');
         } 
         return response.json();
       })
-      .then(data => {
+      .then(queryData => {
         setIsLoading(false);
-        setData(data);
+        setData(queryData);
         setError(null);
       })
       .catch(err => {
@@ -25,7 +25,7 @@ const useFetch = (url) => {
       })
   }, [url])
 
-  return { data, isLoading, error };
+  return { queryData, isLoading, error };
 }
 
 export default useFetch;

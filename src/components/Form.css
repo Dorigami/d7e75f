@@ -1,18 +1,31 @@
-.ui-container {
-    border: 0.1rem solid rgb(0, 0, 0);
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    min-width: 50%;
-    max-width: 90%;
-    text-align: left;
-    position: relative;
+.form-container {
+  background-color: rgb(240,240,240);
+  border-radius: 0.1rem;
+  border: 0.1rem solid rgb(0, 0, 0);
+  margin: 4px;
+  padding: 4px 20px 4px 20px;
+  border-radius: 8px;
+  min-width: 50%;
+  max-width: 90%;
+  text-align: left;
+  position: relative;
 }
 
-.close-button {
+.form-header {
+  display: inline-block;
+}
+
+.form-close-button {
     position: absolute;
     top: 10px;
     right: 10px;
+    background-color: #ccc;
+    border: 0.15rem solid black;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.clear-prefill-button {
     background: none;
     border: none;
     font-size: 1.5rem;
@@ -59,7 +72,7 @@
 }
 
 input:checked + .slider {
-    background-color: #4caf50;
+    background-color: #aaaaff;
 }
 
 input:checked + .slider:before {
